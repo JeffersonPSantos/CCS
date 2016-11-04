@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package ccsPackage;
+import javax.swing.*;
 
 /**
  *
@@ -17,6 +18,7 @@ public class FrameMenu extends javax.swing.JFrame {
     public FrameMenu() {
         initComponents();
         setExtendedState(FrameMenu.MAXIMIZED_BOTH);
+        
     }
 
     /**
@@ -28,31 +30,31 @@ public class FrameMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem1 = new javax.swing.JMenuItem();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         ButtonCompra = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         ButtomRelatorio = new javax.swing.JButton();
-        ButtomSair = new javax.swing.JButton();
         ButtomVenda = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
         menuMenu = new javax.swing.JMenu();
         menuItemCompra = new javax.swing.JMenuItem();
         menuItemVenda = new javax.swing.JMenuItem();
         menuItemRelatorio = new javax.swing.JMenuItem();
-        menuOpcoes = new javax.swing.JMenu();
-        opcoesItemCreditos = new javax.swing.JMenuItem();
-        opcoesItemAjuda = new javax.swing.JMenuItem();
+        menuItemSair = new javax.swing.JMenuItem();
+        menuSobre = new javax.swing.JMenu();
+        sobreItemCreditos = new javax.swing.JMenuItem();
+        sobreItemAjuda = new javax.swing.JMenuItem();
+
+        jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        setTitle("Central Control System");
         setLocation(new java.awt.Point(500, 350));
         setLocationByPlatform(true);
-        setMaximumSize(null);
-        setMinimumSize(null);
-        setUndecorated(true);
-        setResizable(false);
+        setMinimumSize(new java.awt.Dimension(1640, 947));
         setSize(new java.awt.Dimension(1920, 1080));
 
         jLabel2.setFont(new java.awt.Font("Copperplate Gothic Bold", 0, 48)); // NOI18N
@@ -68,7 +70,7 @@ public class FrameMenu extends javax.swing.JFrame {
         jLabel1.setName("ImgCompra"); // NOI18N
         jLabel1.setPreferredSize(new java.awt.Dimension(321, 286));
 
-        ButtonCompra.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        ButtonCompra.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         ButtonCompra.setText("Compra");
         ButtonCompra.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -84,7 +86,7 @@ public class FrameMenu extends javax.swing.JFrame {
         jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel4.setName("ImgCompra"); // NOI18N
 
-        ButtomRelatorio.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        ButtomRelatorio.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         ButtomRelatorio.setText("Relatório");
         ButtomRelatorio.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -92,16 +94,7 @@ public class FrameMenu extends javax.swing.JFrame {
             }
         });
 
-        ButtomSair.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        ButtomSair.setText("Sair");
-        ButtomSair.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        ButtomSair.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ButtomSairMouseClicked(evt);
-            }
-        });
-
-        ButtomVenda.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        ButtomVenda.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         ButtomVenda.setText("Venda");
         ButtomVenda.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -114,18 +107,23 @@ public class FrameMenu extends javax.swing.JFrame {
         menuBar.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
 
         menuMenu.setText("Menu");
-        menuMenu.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        menuMenu.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
 
-        menuItemCompra.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        menuItemCompra.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         menuItemCompra.setText("Compra");
         menuItemCompra.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 menuItemCompraMouseClicked(evt);
             }
         });
+        menuItemCompra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemCompraActionPerformed(evt);
+            }
+        });
         menuMenu.add(menuItemCompra);
 
-        menuItemVenda.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        menuItemVenda.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         menuItemVenda.setText("Venda");
         menuItemVenda.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -139,44 +137,68 @@ public class FrameMenu extends javax.swing.JFrame {
         });
         menuMenu.add(menuItemVenda);
 
-        menuItemRelatorio.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        menuItemRelatorio.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         menuItemRelatorio.setText("Relatório");
         menuItemRelatorio.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 menuItemRelatorioMouseClicked(evt);
             }
         });
+        menuItemRelatorio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemRelatorioActionPerformed(evt);
+            }
+        });
         menuMenu.add(menuItemRelatorio);
+
+        menuItemSair.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        menuItemSair.setText("Sair");
+        menuItemSair.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuItemSairMouseClicked(evt);
+            }
+        });
+        menuItemSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemSairActionPerformed(evt);
+            }
+        });
+        menuMenu.add(menuItemSair);
 
         menuBar.add(menuMenu);
 
-        menuOpcoes.setText("Opções");
-        menuOpcoes.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        menuSobre.setText("Sobre");
+        menuSobre.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
 
-        opcoesItemCreditos.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        opcoesItemCreditos.setText("Créditos");
-        opcoesItemCreditos.addMouseListener(new java.awt.event.MouseAdapter() {
+        sobreItemCreditos.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        sobreItemCreditos.setText("Créditos");
+        sobreItemCreditos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                opcoesItemCreditosMouseClicked(evt);
+                sobreItemCreditosMouseClicked(evt);
             }
         });
-        opcoesItemCreditos.addActionListener(new java.awt.event.ActionListener() {
+        sobreItemCreditos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcoesItemCreditosActionPerformed(evt);
+                sobreItemCreditosActionPerformed(evt);
             }
         });
-        menuOpcoes.add(opcoesItemCreditos);
+        menuSobre.add(sobreItemCreditos);
 
-        opcoesItemAjuda.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        opcoesItemAjuda.setText("Ajuda");
-        opcoesItemAjuda.addMouseListener(new java.awt.event.MouseAdapter() {
+        sobreItemAjuda.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        sobreItemAjuda.setText("Ajuda");
+        sobreItemAjuda.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                opcoesItemAjudaMouseClicked(evt);
+                sobreItemAjudaMouseClicked(evt);
             }
         });
-        menuOpcoes.add(opcoesItemAjuda);
+        sobreItemAjuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sobreItemAjudaActionPerformed(evt);
+            }
+        });
+        menuSobre.add(sobreItemAjuda);
 
-        menuBar.add(menuOpcoes);
+        menuBar.add(menuSobre);
 
         setJMenuBar(menuBar);
 
@@ -189,19 +211,27 @@ public class FrameMenu extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ButtonCompra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 512, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ButtomVenda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ButtomSair, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 512, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 512, Short.MAX_VALUE)
-                            .addComponent(ButtomRelatorio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap())))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(105, 105, 105)
+                                .addComponent(ButtonCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 512, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(ButtomVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 512, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(ButtomRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(109, 109, 109))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,73 +244,145 @@ public class FrameMenu extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 542, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(ButtonCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(ButtomRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(ButtomVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(46, 46, 46)
-                .addComponent(ButtomSair, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(ButtomVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ButtonCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ButtomRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(134, 134, 134))
         );
 
         jLabel2.getAccessibleContext().setAccessibleName("labelMenuNome");
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void menuItemVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemVendaActionPerformed
-        // TODO add your handling code here:
+
+        frameVenda();
+        
     }//GEN-LAST:event_menuItemVendaActionPerformed
 
-    private void ButtomSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtomSairMouseClicked
-    System.exit(0);        // TODO add your handling code here:
-    }//GEN-LAST:event_ButtomSairMouseClicked
-
     private void ButtonCompraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonCompraMouseClicked
-        FrameCompra frameCompra = new FrameCompra();
-        frameCompra.setVisible(true);        
+        
+        frameCompra();
+        
     }//GEN-LAST:event_ButtonCompraMouseClicked
 
     private void ButtomVendaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtomVendaMouseClicked
-        FrameVenda frameVenda = new FrameVenda();
-        frameVenda.setVisible(true);
+        
+        frameVenda();
+        
     }//GEN-LAST:event_ButtomVendaMouseClicked
 
     private void ButtomRelatorioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtomRelatorioMouseClicked
-        FrameRelatorio frameRelatorio = new FrameRelatorio();
-        frameRelatorio.setVisible(true);
+        
+        frameRelatorio();
+        
     }//GEN-LAST:event_ButtomRelatorioMouseClicked
 
     private void menuItemCompraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuItemCompraMouseClicked
-        FrameCompra frameCompra = new FrameCompra();
-        frameCompra.setVisible(true); 
+     
     }//GEN-LAST:event_menuItemCompraMouseClicked
 
     private void menuItemVendaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuItemVendaMouseClicked
-        FrameVenda frameVenda = new FrameVenda();
-        frameVenda.setVisible(true);
+
     }//GEN-LAST:event_menuItemVendaMouseClicked
 
     private void menuItemRelatorioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuItemRelatorioMouseClicked
-        FrameRelatorio frameRelatorio = new FrameRelatorio();
-        frameRelatorio.setVisible(true);
+
     }//GEN-LAST:event_menuItemRelatorioMouseClicked
 
-    private void opcoesItemCreditosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcoesItemCreditosActionPerformed
+    private void menuItemCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemCompraActionPerformed
+        
+        frameCompra();
+        
+    }//GEN-LAST:event_menuItemCompraActionPerformed
+
+    private void menuItemRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemRelatorioActionPerformed
+        
+        frameRelatorio();
+        
+    }//GEN-LAST:event_menuItemRelatorioActionPerformed
+
+    private void sobreItemCreditosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sobreItemCreditosMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_opcoesItemCreditosActionPerformed
+    }//GEN-LAST:event_sobreItemCreditosMouseClicked
 
-    private void opcoesItemCreditosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_opcoesItemCreditosMouseClicked
-        FrameCreditos frameCreditos = new FrameCreditos();
-        frameCreditos.setVisible(true);
-    }//GEN-LAST:event_opcoesItemCreditosMouseClicked
+    private void sobreItemCreditosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sobreItemCreditosActionPerformed
+        
+        frameCreditos();
+        
+    }//GEN-LAST:event_sobreItemCreditosActionPerformed
 
-    private void opcoesItemAjudaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_opcoesItemAjudaMouseClicked
+    private void sobreItemAjudaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sobreItemAjudaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sobreItemAjudaMouseClicked
+
+    private void sobreItemAjudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sobreItemAjudaActionPerformed
+        
+        frameAjuda();
+        
+    }//GEN-LAST:event_sobreItemAjudaActionPerformed
+
+    private void menuItemSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuItemSairMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuItemSairMouseClicked
+
+    private void menuItemSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemSairActionPerformed
+        
+        opcaoSair();
+        
+    }//GEN-LAST:event_menuItemSairActionPerformed
+
+    private void opcaoSair() {                                   
+
+        int opcao = JOptionPane.showConfirmDialog(null,"Realmente deseja sair?","Central Control System", JOptionPane.YES_NO_CANCEL_OPTION);
+
+        if (opcao == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        } 
+        else if (opcao == JOptionPane.NO_OPTION){
+            setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        }
+    }
+    
+    private void frameCompra(){
+    
+        FrameCompra frameCompra = new FrameCompra();
+        frameCompra.setVisible(true);
+        
+    }
+    
+    private void frameVenda(){
+    
+        FrameVenda frameVenda = new FrameVenda();
+        frameVenda.setVisible(true);
+        
+    }
+    
+    public void frameRelatorio(){
+        
+        FrameRelatorio frameRelatorio = new FrameRelatorio();
+        frameRelatorio.setVisible(true);
+    }
+    
+    private void frameAjuda(){
+    
         FrameAjuda frameAjuda = new FrameAjuda();
         frameAjuda.setVisible(true);
-    }//GEN-LAST:event_opcoesItemAjudaMouseClicked
-
+        
+    }
+    
+    private void frameCreditos(){
+    
+        FrameCreditos frameCreditos = new FrameCreditos();
+        frameCreditos.setVisible(true);
+        
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -321,20 +423,21 @@ public class FrameMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtomRelatorio;
-    private javax.swing.JButton ButtomSair;
     private javax.swing.JButton ButtomVenda;
     private javax.swing.JButton ButtonCompra;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem menuItemCompra;
     private javax.swing.JMenuItem menuItemRelatorio;
+    private javax.swing.JMenuItem menuItemSair;
     private javax.swing.JMenuItem menuItemVenda;
     private javax.swing.JMenu menuMenu;
-    private javax.swing.JMenu menuOpcoes;
-    private javax.swing.JMenuItem opcoesItemAjuda;
-    private javax.swing.JMenuItem opcoesItemCreditos;
+    private javax.swing.JMenu menuSobre;
+    private javax.swing.JMenuItem sobreItemAjuda;
+    private javax.swing.JMenuItem sobreItemCreditos;
     // End of variables declaration//GEN-END:variables
 }
