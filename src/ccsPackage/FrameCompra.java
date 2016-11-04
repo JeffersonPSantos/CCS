@@ -16,6 +16,7 @@ public class FrameCompra extends javax.swing.JFrame {
      */
     public FrameCompra() {
         initComponents();
+        setExtendedState(FrameMenu.MAXIMIZED_BOTH);
     }
 
     /**
