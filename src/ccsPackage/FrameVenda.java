@@ -36,7 +36,7 @@ public class FrameVenda extends javax.swing.JDialog {
     private void initComponents() {
 
         labelVenda = new javax.swing.JLabel();
-        ButtonFechar = new javax.swing.JButton();
+        buttonFechar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Central Control System - Venda");
@@ -47,15 +47,15 @@ public class FrameVenda extends javax.swing.JDialog {
         labelVenda.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelVenda.setText("Venda");
 
-        ButtonFechar.setText("Fechar");
-        ButtonFechar.addMouseListener(new java.awt.event.MouseAdapter() {
+        buttonFechar.setText("Fechar");
+        buttonFechar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ButtonFecharMouseClicked(evt);
+                buttonFecharMouseClicked(evt);
             }
         });
-        ButtonFechar.addActionListener(new java.awt.event.ActionListener() {
+        buttonFechar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonFecharActionPerformed(evt);
+                buttonFecharActionPerformed(evt);
             }
         });
 
@@ -68,7 +68,7 @@ public class FrameVenda extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 505, Short.MAX_VALUE)
-                        .addComponent(ButtonFechar))
+                        .addComponent(buttonFechar))
                     .addComponent(labelVenda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -78,7 +78,7 @@ public class FrameVenda extends javax.swing.JDialog {
                 .addGap(15, 15, 15)
                 .addComponent(labelVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 616, Short.MAX_VALUE)
-                .addComponent(ButtonFechar)
+                .addComponent(buttonFechar)
                 .addContainerGap())
         );
 
@@ -86,7 +86,7 @@ public class FrameVenda extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ButtonFecharMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonFecharMouseClicked
+    private void buttonFecharMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonFecharMouseClicked
 
         int opcao = JOptionPane.showConfirmDialog(null,"Realmente deseja sair?","Central Control System - Compra", JOptionPane.YES_NO_CANCEL_OPTION);
 
@@ -98,11 +98,11 @@ public class FrameVenda extends javax.swing.JDialog {
 
         }
 
-    }//GEN-LAST:event_ButtonFecharMouseClicked
+    }//GEN-LAST:event_buttonFecharMouseClicked
 
-    private void ButtonFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonFecharActionPerformed
+    private void buttonFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonFecharActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonFecharActionPerformed
+    }//GEN-LAST:event_buttonFecharActionPerformed
 
     /**
      * @param args the command line arguments
@@ -140,7 +140,7 @@ public class FrameVenda extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ButtonFechar;
+    private javax.swing.JButton buttonFechar;
     private javax.swing.JLabel labelVenda;
     // End of variables declaration//GEN-END:variables
 }

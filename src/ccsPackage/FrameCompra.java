@@ -34,15 +34,45 @@ public class FrameCompra extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        ButtonFechar = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        buttonFechar = new javax.swing.JButton();
         labelCompra = new javax.swing.JLabel();
+        labelCompraNumeroDaOrdem = new javax.swing.JLabel();
+        labelCompraNomeProduto = new javax.swing.JLabel();
+        labelCompraQuantidade = new javax.swing.JLabel();
+        labelCompraFornecedor = new javax.swing.JLabel();
+        labelCompraValor = new javax.swing.JLabel();
+        labelCompraCPF = new javax.swing.JLabel();
+        labelCompraCodigo = new javax.swing.JLabel();
+        labelCompraObservacoes = new javax.swing.JLabel();
+        labelCompraData = new javax.swing.JLabel();
+        buttonSalvar = new javax.swing.JButton();
+        buttonLimpar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        textAreaObservacoes = new javax.swing.JTextArea();
+        textData = new javax.swing.JFormattedTextField();
+        textNumeroOrdem = new javax.swing.JFormattedTextField();
+        textQtd = new javax.swing.JFormattedTextField();
+        textCodigo = new javax.swing.JFormattedTextField();
+        textValorCompra = new javax.swing.JFormattedTextField();
+        textCPF = new javax.swing.JFormattedTextField();
+        textNomeProduto = new javax.swing.JTextField();
+        textFornecedor = new javax.swing.JTextField();
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel5.setText("Fornecedor:");
+
+        jTextField5.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jTextField5.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Central Control System - Compra");
         setFocusTraversalPolicyProvider(true);
         setLocationByPlatform(true);
-        setMaximumSize(new java.awt.Dimension(600, 702));
-        setMinimumSize(new java.awt.Dimension(600, 702));
+        setMaximumSize(new java.awt.Dimension(600, 500));
+        setMinimumSize(new java.awt.Dimension(600, 500));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
@@ -50,15 +80,15 @@ public class FrameCompra extends javax.swing.JDialog {
             }
         });
 
-        ButtonFechar.setText("Fechar");
-        ButtonFechar.addMouseListener(new java.awt.event.MouseAdapter() {
+        buttonFechar.setText("Fechar");
+        buttonFechar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ButtonFecharMouseClicked(evt);
+                buttonFecharMouseClicked(evt);
             }
         });
-        ButtonFechar.addActionListener(new java.awt.event.ActionListener() {
+        buttonFechar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonFecharActionPerformed(evt);
+                buttonFecharActionPerformed(evt);
             }
         });
 
@@ -66,38 +96,232 @@ public class FrameCompra extends javax.swing.JDialog {
         labelCompra.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelCompra.setText("Compra");
 
+        labelCompraNumeroDaOrdem.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        labelCompraNumeroDaOrdem.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labelCompraNumeroDaOrdem.setText("Número da Ordem:");
+
+        labelCompraNomeProduto.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        labelCompraNomeProduto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labelCompraNomeProduto.setText("Nome do Produto:");
+
+        labelCompraQuantidade.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        labelCompraQuantidade.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labelCompraQuantidade.setText("Quantidade:");
+
+        labelCompraFornecedor.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        labelCompraFornecedor.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labelCompraFornecedor.setText("Fornecedor:");
+
+        labelCompraValor.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        labelCompraValor.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labelCompraValor.setText("Valor:");
+
+        labelCompraCPF.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        labelCompraCPF.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labelCompraCPF.setText("CPF/CNPJ:");
+
+        labelCompraCodigo.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        labelCompraCodigo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labelCompraCodigo.setText("Código do Produto:");
+
+        labelCompraObservacoes.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        labelCompraObservacoes.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labelCompraObservacoes.setText("Observações:");
+
+        labelCompraData.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        labelCompraData.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labelCompraData.setText("Data da Ordem:");
+
+        buttonSalvar.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        buttonSalvar.setText("Salvar");
+        buttonSalvar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonSalvarMouseClicked(evt);
+            }
+        });
+        buttonSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSalvarActionPerformed(evt);
+            }
+        });
+
+        buttonLimpar.setText("Limpar");
+        buttonLimpar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonLimparMouseClicked(evt);
+            }
+        });
+        buttonLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonLimparActionPerformed(evt);
+            }
+        });
+
+        textAreaObservacoes.setColumns(5);
+        textAreaObservacoes.setRows(5);
+        jScrollPane1.setViewportView(textAreaObservacoes);
+
+        try {
+            textData.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        textData.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textDataActionPerformed(evt);
+            }
+        });
+
+        textNumeroOrdem.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
+        textNumeroOrdem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textNumeroOrdemActionPerformed(evt);
+            }
+        });
+
+        textQtd.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
+        textQtd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textQtdActionPerformed(evt);
+            }
+        });
+
+        textCodigo.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
+        textCodigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textCodigoActionPerformed(evt);
+            }
+        });
+
+        textValorCompra.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#,##0.00"))));
+        textValorCompra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textValorCompraActionPerformed(evt);
+            }
+        });
+
+        try {
+            textCPF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###/##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        textCPF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textCPFActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 505, Short.MAX_VALUE)
-                        .addComponent(ButtonFechar))
-                    .addComponent(labelCompra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelCompra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(labelCompraData, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
+                                .addGap(28, 28, 28)
+                                .addComponent(textData, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(220, 220, 220)))
+                        .addGap(10, 10, 10))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelCompraNumeroDaOrdem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(labelCompraCodigo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(labelCompraQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelCompraObservacoes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(labelCompraCPF, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(labelCompraFornecedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(labelCompraValor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(labelCompraNomeProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(18, 18, 18))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(buttonFechar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(textNumeroOrdem, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(textQtd, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(textValorCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(textCPF, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(buttonLimpar)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(buttonSalvar))
+                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE))
+                                    .addGap(30, 30, 30)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(textCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textNomeProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap())))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addGap(30, 30, 30)
                 .addComponent(labelCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 618, Short.MAX_VALUE)
-                .addComponent(ButtonFechar)
-                .addContainerGap())
+                .addGap(55, 55, 55)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelCompraNumeroDaOrdem)
+                    .addComponent(textNumeroOrdem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelCompraData)
+                    .addComponent(textData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelCompraCodigo)
+                    .addComponent(textCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelCompraQuantidade)
+                    .addComponent(textQtd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelCompraNomeProduto)
+                    .addComponent(textNomeProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelCompraValor)
+                    .addComponent(textValorCompra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelCompraFornecedor)
+                    .addComponent(textFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelCompraCPF)
+                    .addComponent(textCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelCompraObservacoes)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 16, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonFechar)
+                    .addComponent(buttonSalvar)
+                    .addComponent(buttonLimpar))
+                .addGap(30, 30, 30))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ButtonFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonFecharActionPerformed
+    private void buttonFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonFecharActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonFecharActionPerformed
+    }//GEN-LAST:event_buttonFecharActionPerformed
 
-    private void ButtonFecharMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonFecharMouseClicked
+    private void buttonFecharMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonFecharMouseClicked
         
         
         int opcao = JOptionPane.showConfirmDialog(null,"Realmente deseja sair?","Central Control System - Compra", JOptionPane.YES_NO_CANCEL_OPTION);
@@ -110,11 +334,61 @@ public class FrameCompra extends javax.swing.JDialog {
             
         }
         
-    }//GEN-LAST:event_ButtonFecharMouseClicked
+    }//GEN-LAST:event_buttonFecharMouseClicked
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
         
     }//GEN-LAST:event_formWindowClosed
+
+    private void buttonSalvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonSalvarMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonSalvarMouseClicked
+
+    private void buttonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSalvarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonSalvarActionPerformed
+
+    private void buttonLimparMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonLimparMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonLimparMouseClicked
+
+    private void buttonLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLimparActionPerformed
+
+      textNumeroOrdem.setText(null);
+      textData.setText(null);
+      textCodigo.setText(null);
+      textQtd.setText(null);
+      textNomeProduto.setText(null);
+      textValorCompra.setText(null);
+      textFornecedor.setText(null);
+      textCPF.setText(null);
+      textAreaObservacoes.setText(null);
+  
+    }//GEN-LAST:event_buttonLimparActionPerformed
+
+    private void textDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textDataActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textDataActionPerformed
+
+    private void textNumeroOrdemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNumeroOrdemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textNumeroOrdemActionPerformed
+
+    private void textQtdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textQtdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textQtdActionPerformed
+
+    private void textCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textCodigoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textCodigoActionPerformed
+
+    private void textValorCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textValorCompraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textValorCompraActionPerformed
+
+    private void textCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textCPFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textCPFActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,7 +427,30 @@ public class FrameCompra extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ButtonFechar;
+    private javax.swing.JButton buttonFechar;
+    private javax.swing.JButton buttonLimpar;
+    private javax.swing.JButton buttonSalvar;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField5;
     private javax.swing.JLabel labelCompra;
+    private javax.swing.JLabel labelCompraCPF;
+    private javax.swing.JLabel labelCompraCodigo;
+    private javax.swing.JLabel labelCompraData;
+    private javax.swing.JLabel labelCompraFornecedor;
+    private javax.swing.JLabel labelCompraNomeProduto;
+    private javax.swing.JLabel labelCompraNumeroDaOrdem;
+    private javax.swing.JLabel labelCompraObservacoes;
+    private javax.swing.JLabel labelCompraQuantidade;
+    private javax.swing.JLabel labelCompraValor;
+    private javax.swing.JTextArea textAreaObservacoes;
+    private javax.swing.JFormattedTextField textCPF;
+    private javax.swing.JFormattedTextField textCodigo;
+    private javax.swing.JFormattedTextField textData;
+    private javax.swing.JTextField textFornecedor;
+    private javax.swing.JTextField textNomeProduto;
+    private javax.swing.JFormattedTextField textNumeroOrdem;
+    private javax.swing.JFormattedTextField textQtd;
+    private javax.swing.JFormattedTextField textValorCompra;
     // End of variables declaration//GEN-END:variables
 }
