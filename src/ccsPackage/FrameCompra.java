@@ -5,18 +5,24 @@
  */
 package ccsPackage;
 
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Alyph
  */
-public class FrameCompra extends javax.swing.JFrame {
+public class FrameCompra extends javax.swing.JDialog {
 
     /**
      * Creates new form FrameCompra
      */
     public FrameCompra() {
         initComponents();
-        setExtendedState(FrameMenu.MAXIMIZED_BOTH);
+    
+        this.setModal(true); 
+        this.setIconImage(new ImageIcon("C:\\Users\\Alyph\\OneDrive\\Documentos\\NetBeansProjects\\CentralControlSystem\\src\\ccsImagens\\Icons\\iconCompra.png").getImage());
     }
 
     /**
@@ -28,26 +34,87 @@ public class FrameCompra extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        ButtonFechar = new javax.swing.JButton();
+        labelCompra = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Compra");
+        setTitle("Central Control System - Compra");
+        setFocusTraversalPolicyProvider(true);
         setLocationByPlatform(true);
-        setMaximumSize(null);
-        setMinimumSize(null);
+        setMaximumSize(new java.awt.Dimension(600, 702));
+        setMinimumSize(new java.awt.Dimension(600, 702));
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
+
+        ButtonFechar.setText("Fechar");
+        ButtonFechar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ButtonFecharMouseClicked(evt);
+            }
+        });
+        ButtonFechar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonFecharActionPerformed(evt);
+            }
+        });
+
+        labelCompra.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 36)); // NOI18N
+        labelCompra.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelCompra.setText("Compra");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 505, Short.MAX_VALUE)
+                        .addComponent(ButtonFechar))
+                    .addComponent(labelCompra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(labelCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 618, Short.MAX_VALUE)
+                .addComponent(ButtonFechar)
+                .addContainerGap())
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ButtonFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonFecharActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonFecharActionPerformed
+
+    private void ButtonFecharMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonFecharMouseClicked
+        
+        
+        int opcao = JOptionPane.showConfirmDialog(null,"Realmente deseja sair?","Central Control System - Compra", JOptionPane.YES_NO_CANCEL_OPTION);
+      
+        if (opcao == JOptionPane.YES_OPTION) {
+            this.dispose();
+        } 
+        else if (opcao == JOptionPane.NO_OPTION){
+            setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            
+        }
+        
+    }//GEN-LAST:event_ButtonFecharMouseClicked
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        
+    }//GEN-LAST:event_formWindowClosed
 
     /**
      * @param args the command line arguments
@@ -80,10 +147,13 @@ public class FrameCompra extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new FrameCompra().setVisible(true);
+                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ButtonFechar;
+    private javax.swing.JLabel labelCompra;
     // End of variables declaration//GEN-END:variables
 }

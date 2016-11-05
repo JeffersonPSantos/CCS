@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package ccsPackage;
-import javax.swing.*;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,8 +19,7 @@ public class FrameMenu extends javax.swing.JFrame {
      */
     public FrameMenu() {
         initComponents();
-        //setExtendedState(FrameMenu.MAXIMIZED_BOTH);
-        
+        this.setIconImage(new ImageIcon("C:\\Users\\Alyph\\OneDrive\\Documentos\\NetBeansProjects\\CentralControlSystem\\src\\ccsImagens\\Icons\\iconCCS.png").getImage());
     }
 
     /**
@@ -307,16 +308,6 @@ public class FrameMenu extends javax.swing.JFrame {
         
     }//GEN-LAST:event_sobreItemCreditosActionPerformed
 
-    private void sobreItemAjudaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sobreItemAjudaMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_sobreItemAjudaMouseClicked
-
-    private void sobreItemAjudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sobreItemAjudaActionPerformed
-        
-        frameAjuda();
-        
-    }//GEN-LAST:event_sobreItemAjudaActionPerformed
-
     private void menuItemSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuItemSairMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_menuItemSairMouseClicked
@@ -326,6 +317,14 @@ public class FrameMenu extends javax.swing.JFrame {
         opcaoSair();
         
     }//GEN-LAST:event_menuItemSairActionPerformed
+
+    private void sobreItemAjudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sobreItemAjudaActionPerformed
+
+    }//GEN-LAST:event_sobreItemAjudaActionPerformed
+
+    private void sobreItemAjudaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sobreItemAjudaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sobreItemAjudaMouseClicked
 
     private void opcaoSair() {                                   
 
@@ -357,13 +356,6 @@ public class FrameMenu extends javax.swing.JFrame {
         
         FrameRelatorio frameRelatorio = new FrameRelatorio();
         frameRelatorio.setVisible(true);
-    }
-    
-    private void frameAjuda(){
-    
-        FrameAjuda frameAjuda = new FrameAjuda();
-        frameAjuda.setVisible(true);
-        
     }
     
     private void frameCreditos(){
