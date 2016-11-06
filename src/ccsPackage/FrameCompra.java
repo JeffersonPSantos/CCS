@@ -50,15 +50,15 @@ public class FrameCompra extends javax.swing.JDialog {
         buttonSalvar = new javax.swing.JButton();
         buttonLimpar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        textAreaObservacoes = new javax.swing.JTextArea();
-        textData = new javax.swing.JFormattedTextField();
-        textNumeroOrdem = new javax.swing.JFormattedTextField();
-        textQtd = new javax.swing.JFormattedTextField();
-        textCodigo = new javax.swing.JFormattedTextField();
+        textAreaObservacoesCompra = new javax.swing.JTextArea();
+        textDataCompra = new javax.swing.JFormattedTextField();
+        textQtdCompra = new javax.swing.JFormattedTextField();
         textValorCompra = new javax.swing.JFormattedTextField();
-        textCPF = new javax.swing.JFormattedTextField();
+        textCPFCompra = new javax.swing.JFormattedTextField();
         textNomeProduto = new javax.swing.JTextField();
         textFornecedor = new javax.swing.JTextField();
+        textNumeroOrdemCompra = new javax.swing.JTextField();
+        textCodigoCompra = new javax.swing.JTextField();
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -157,39 +157,25 @@ public class FrameCompra extends javax.swing.JDialog {
             }
         });
 
-        textAreaObservacoes.setColumns(5);
-        textAreaObservacoes.setRows(5);
-        jScrollPane1.setViewportView(textAreaObservacoes);
+        textAreaObservacoesCompra.setColumns(5);
+        textAreaObservacoesCompra.setRows(5);
+        jScrollPane1.setViewportView(textAreaObservacoesCompra);
 
         try {
-            textData.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            textDataCompra.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        textData.addActionListener(new java.awt.event.ActionListener() {
+        textDataCompra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textDataActionPerformed(evt);
+                textDataCompraActionPerformed(evt);
             }
         });
 
-        textNumeroOrdem.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
-        textNumeroOrdem.addActionListener(new java.awt.event.ActionListener() {
+        textQtdCompra.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
+        textQtdCompra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textNumeroOrdemActionPerformed(evt);
-            }
-        });
-
-        textQtd.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
-        textQtd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textQtdActionPerformed(evt);
-            }
-        });
-
-        textCodigo.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
-        textCodigo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textCodigoActionPerformed(evt);
+                textQtdCompraActionPerformed(evt);
             }
         });
 
@@ -201,13 +187,21 @@ public class FrameCompra extends javax.swing.JDialog {
         });
 
         try {
-            textCPF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###/##")));
+            textCPFCompra.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###/##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        textCPF.addActionListener(new java.awt.event.ActionListener() {
+        textCPFCompra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textCPFActionPerformed(evt);
+                textCPFCompraActionPerformed(evt);
+            }
+        });
+
+        textNumeroOrdemCompra.setPreferredSize(new java.awt.Dimension(6, 22));
+
+        textCodigoCompra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textCodigoCompraActionPerformed(evt);
             }
         });
 
@@ -218,15 +212,12 @@ public class FrameCompra extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelCompra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(labelCompraData, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
-                                .addGap(28, 28, 28)
-                                .addComponent(textData, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(220, 220, 220)))
-                        .addGap(10, 10, 10))
+                    .addComponent(labelCompra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(labelCompraData, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(textDataCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(230, 230, 230))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -245,24 +236,25 @@ public class FrameCompra extends javax.swing.JDialog {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(textNumeroOrdem, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(textQtd, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(textQtdCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(textValorCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(textCPF, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(textCPFCompra, javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
                                             .addComponent(buttonLimpar)
                                             .addGap(18, 18, 18)
                                             .addComponent(buttonSalvar))
                                         .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE))
                                     .addGap(30, 30, 30)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(textCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(textNomeProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(textFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap())))))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(textNomeProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(textFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(textNumeroOrdemCompra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGap(200, 200, 200)))
+                            .addComponent(textCodigoCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(10, 10, 10))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -272,19 +264,19 @@ public class FrameCompra extends javax.swing.JDialog {
                 .addGap(55, 55, 55)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelCompraNumeroDaOrdem)
-                    .addComponent(textNumeroOrdem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textNumeroOrdemCompra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelCompraData)
-                    .addComponent(textData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textDataCompra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelCompraCodigo)
-                    .addComponent(textCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textCodigoCompra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelCompraQuantidade)
-                    .addComponent(textQtd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textQtdCompra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelCompraNomeProduto)
@@ -300,7 +292,7 @@ public class FrameCompra extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelCompraCPF)
-                    .addComponent(textCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textCPFCompra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelCompraObservacoes)
@@ -354,41 +346,37 @@ public class FrameCompra extends javax.swing.JDialog {
 
     private void buttonLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLimparActionPerformed
 
-      textNumeroOrdem.setText(null);
-      textData.setText(null);
-      textCodigo.setText(null);
-      textQtd.setText(null);
+      textNumeroOrdemCompra.setText(null);
+      textDataCompra.setText(null);
+      textCodigoCompra.setText(null);
+      textQtdCompra.setText(null);
       textNomeProduto.setText(null);
       textValorCompra.setText(null);
       textFornecedor.setText(null);
-      textCPF.setText(null);
-      textAreaObservacoes.setText(null);
+      textCPFCompra.setText(null);
+      textAreaObservacoesCompra.setText(null);
   
     }//GEN-LAST:event_buttonLimparActionPerformed
 
-    private void textDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textDataActionPerformed
+    private void textDataCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textDataCompraActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textDataActionPerformed
+    }//GEN-LAST:event_textDataCompraActionPerformed
 
-    private void textNumeroOrdemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNumeroOrdemActionPerformed
+    private void textQtdCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textQtdCompraActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textNumeroOrdemActionPerformed
-
-    private void textQtdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textQtdActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textQtdActionPerformed
-
-    private void textCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textCodigoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textCodigoActionPerformed
+    }//GEN-LAST:event_textQtdCompraActionPerformed
 
     private void textValorCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textValorCompraActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textValorCompraActionPerformed
 
-    private void textCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textCPFActionPerformed
+    private void textCPFCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textCPFCompraActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textCPFActionPerformed
+    }//GEN-LAST:event_textCPFCompraActionPerformed
+
+    private void textCodigoCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textCodigoCompraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textCodigoCompraActionPerformed
 
     /**
      * @param args the command line arguments
@@ -443,14 +431,14 @@ public class FrameCompra extends javax.swing.JDialog {
     private javax.swing.JLabel labelCompraObservacoes;
     private javax.swing.JLabel labelCompraQuantidade;
     private javax.swing.JLabel labelCompraValor;
-    private javax.swing.JTextArea textAreaObservacoes;
-    private javax.swing.JFormattedTextField textCPF;
-    private javax.swing.JFormattedTextField textCodigo;
-    private javax.swing.JFormattedTextField textData;
+    private javax.swing.JTextArea textAreaObservacoesCompra;
+    private javax.swing.JFormattedTextField textCPFCompra;
+    private javax.swing.JTextField textCodigoCompra;
+    private javax.swing.JFormattedTextField textDataCompra;
     private javax.swing.JTextField textFornecedor;
     private javax.swing.JTextField textNomeProduto;
-    private javax.swing.JFormattedTextField textNumeroOrdem;
-    private javax.swing.JFormattedTextField textQtd;
+    private javax.swing.JTextField textNumeroOrdemCompra;
+    private javax.swing.JFormattedTextField textQtdCompra;
     private javax.swing.JFormattedTextField textValorCompra;
     // End of variables declaration//GEN-END:variables
 }

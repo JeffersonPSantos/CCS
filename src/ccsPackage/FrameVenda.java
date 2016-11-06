@@ -36,16 +36,40 @@ public class FrameVenda extends javax.swing.JDialog {
     private void initComponents() {
 
         labelVenda = new javax.swing.JLabel();
+        labelCompraData = new javax.swing.JLabel();
         buttonFechar = new javax.swing.JButton();
+        buttonSalvar = new javax.swing.JButton();
+        textCliente = new javax.swing.JTextField();
+        buttonLimpar = new javax.swing.JButton();
+        labelCompraNumeroDaOrdem = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        textAreaObservacoesVenda = new javax.swing.JTextArea();
+        labelCompraQuantidade = new javax.swing.JLabel();
+        textDataVenda = new javax.swing.JFormattedTextField();
+        labelCompraCliente = new javax.swing.JLabel();
+        labelCompraValor = new javax.swing.JLabel();
+        textQtdVenda = new javax.swing.JFormattedTextField();
+        labelCompraCPF = new javax.swing.JLabel();
+        labelCompraCodigo = new javax.swing.JLabel();
+        textValorVenda = new javax.swing.JFormattedTextField();
+        labelCompraObservacoes = new javax.swing.JLabel();
+        textCPFVenda = new javax.swing.JFormattedTextField();
+        textNumeroOrdemVenda = new javax.swing.JTextField();
+        textCodigoVenda = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Central Control System - Venda");
-        setMaximumSize(new java.awt.Dimension(600, 700));
-        setMinimumSize(new java.awt.Dimension(600, 700));
+        setMaximumSize(new java.awt.Dimension(600, 509));
+        setMinimumSize(new java.awt.Dimension(600, 509));
+        setPreferredSize(new java.awt.Dimension(600, 509));
 
         labelVenda.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 36)); // NOI18N
         labelVenda.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelVenda.setText("Venda");
+
+        labelCompraData.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        labelCompraData.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labelCompraData.setText("Data da Ordem:");
 
         buttonFechar.setText("Fechar");
         buttonFechar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -59,27 +83,205 @@ public class FrameVenda extends javax.swing.JDialog {
             }
         });
 
+        buttonSalvar.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        buttonSalvar.setText("Salvar");
+        buttonSalvar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonSalvarMouseClicked(evt);
+            }
+        });
+        buttonSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSalvarActionPerformed(evt);
+            }
+        });
+
+        buttonLimpar.setText("Limpar");
+        buttonLimpar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonLimparMouseClicked(evt);
+            }
+        });
+        buttonLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonLimparActionPerformed(evt);
+            }
+        });
+
+        labelCompraNumeroDaOrdem.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        labelCompraNumeroDaOrdem.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labelCompraNumeroDaOrdem.setText("Número da Ordem:");
+
+        textAreaObservacoesVenda.setColumns(5);
+        textAreaObservacoesVenda.setRows(5);
+        jScrollPane1.setViewportView(textAreaObservacoesVenda);
+
+        labelCompraQuantidade.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        labelCompraQuantidade.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labelCompraQuantidade.setText("Quantidade:");
+
+        try {
+            textDataVenda.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        textDataVenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textDataVendaActionPerformed(evt);
+            }
+        });
+
+        labelCompraCliente.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        labelCompraCliente.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labelCompraCliente.setText("Cliente");
+
+        labelCompraValor.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        labelCompraValor.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labelCompraValor.setText("Valor:");
+
+        textQtdVenda.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
+        textQtdVenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textQtdVendaActionPerformed(evt);
+            }
+        });
+
+        labelCompraCPF.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        labelCompraCPF.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labelCompraCPF.setText("CPF/CNPJ:");
+
+        labelCompraCodigo.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        labelCompraCodigo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labelCompraCodigo.setText("Código do Produto:");
+
+        textValorVenda.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#,##0.00"))));
+        textValorVenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textValorVendaActionPerformed(evt);
+            }
+        });
+
+        labelCompraObservacoes.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        labelCompraObservacoes.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labelCompraObservacoes.setText("Observações:");
+
+        try {
+            textCPFVenda.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###/##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        textCPFVenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textCPFVendaActionPerformed(evt);
+            }
+        });
+
+        textNumeroOrdemVenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textNumeroOrdemVendaActionPerformed(evt);
+            }
+        });
+
+        textCodigoVenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textCodigoVendaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(labelVenda, javax.swing.GroupLayout.DEFAULT_SIZE, 558, Short.MAX_VALUE)
+                        .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 505, Short.MAX_VALUE)
-                        .addComponent(buttonFechar))
-                    .addComponent(labelVenda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelCompraNumeroDaOrdem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(labelCompraCodigo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(labelCompraQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelCompraObservacoes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(labelCompraCPF, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(labelCompraCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(labelCompraValor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(18, 18, 18))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(buttonFechar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(labelCompraData, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(buttonLimpar)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(buttonSalvar))
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 397, Short.MAX_VALUE)
+                                    .addComponent(textCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 397, Short.MAX_VALUE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(textCPFVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, 0)))
+                                .addGap(30, 30, 30))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(textValorVenda, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(textQtdVenda, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(textNumeroOrdemVenda, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(textDataVenda, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                                    .addComponent(textCodigoVenda, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addGap(198, 198, 198))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addGap(30, 30, 30)
                 .addComponent(labelVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 616, Short.MAX_VALUE)
-                .addComponent(buttonFechar)
-                .addContainerGap())
+                .addGap(55, 55, 55)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelCompraNumeroDaOrdem)
+                    .addComponent(textNumeroOrdemVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelCompraData)
+                    .addComponent(textDataVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelCompraCodigo)
+                    .addComponent(textCodigoVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelCompraQuantidade)
+                    .addComponent(textQtdVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelCompraValor)
+                    .addComponent(textValorVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelCompraCliente)
+                    .addComponent(textCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelCompraCPF)
+                    .addComponent(textCPFVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelCompraObservacoes)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 45, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonFechar)
+                    .addComponent(buttonSalvar)
+                    .addComponent(buttonLimpar))
+                .addGap(30, 30, 30))
         );
 
         pack();
@@ -103,6 +305,55 @@ public class FrameVenda extends javax.swing.JDialog {
     private void buttonFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonFecharActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_buttonFecharActionPerformed
+
+    private void buttonSalvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonSalvarMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonSalvarMouseClicked
+
+    private void buttonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSalvarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonSalvarActionPerformed
+
+    private void buttonLimparMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonLimparMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonLimparMouseClicked
+
+    private void buttonLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLimparActionPerformed
+
+        textNumeroOrdemVenda.setText(null);
+        textDataVenda.setText(null);
+        textCodigoVenda.setText(null);
+        textQtdVenda.setText(null);
+        textValorVenda.setText(null);
+        textCliente.setText(null);
+        textCPFVenda.setText(null);
+        textAreaObservacoesVenda.setText(null);
+
+    }//GEN-LAST:event_buttonLimparActionPerformed
+
+    private void textDataVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textDataVendaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textDataVendaActionPerformed
+
+    private void textQtdVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textQtdVendaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textQtdVendaActionPerformed
+
+    private void textValorVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textValorVendaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textValorVendaActionPerformed
+
+    private void textCPFVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textCPFVendaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textCPFVendaActionPerformed
+
+    private void textNumeroOrdemVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNumeroOrdemVendaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textNumeroOrdemVendaActionPerformed
+
+    private void textCodigoVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textCodigoVendaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textCodigoVendaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,6 +392,25 @@ public class FrameVenda extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonFechar;
+    private javax.swing.JButton buttonLimpar;
+    private javax.swing.JButton buttonSalvar;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel labelCompraCPF;
+    private javax.swing.JLabel labelCompraCliente;
+    private javax.swing.JLabel labelCompraCodigo;
+    private javax.swing.JLabel labelCompraData;
+    private javax.swing.JLabel labelCompraNumeroDaOrdem;
+    private javax.swing.JLabel labelCompraObservacoes;
+    private javax.swing.JLabel labelCompraQuantidade;
+    private javax.swing.JLabel labelCompraValor;
     private javax.swing.JLabel labelVenda;
+    private javax.swing.JTextArea textAreaObservacoesVenda;
+    private javax.swing.JFormattedTextField textCPFVenda;
+    private javax.swing.JTextField textCliente;
+    private javax.swing.JTextField textCodigoVenda;
+    private javax.swing.JFormattedTextField textDataVenda;
+    private javax.swing.JTextField textNumeroOrdemVenda;
+    private javax.swing.JFormattedTextField textQtdVenda;
+    private javax.swing.JFormattedTextField textValorVenda;
     // End of variables declaration//GEN-END:variables
 }

@@ -47,7 +47,6 @@ public class FrameMenu extends javax.swing.JFrame {
         menuItemSair = new javax.swing.JMenuItem();
         menuSobre = new javax.swing.JMenu();
         sobreItemCreditos = new javax.swing.JMenuItem();
-        sobreItemAjuda = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -111,6 +110,7 @@ public class FrameMenu extends javax.swing.JFrame {
         menuMenu.setText("Menu");
         menuMenu.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
 
+        menuItemCompra.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
         menuItemCompra.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         menuItemCompra.setText("Compra");
         menuItemCompra.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -125,6 +125,7 @@ public class FrameMenu extends javax.swing.JFrame {
         });
         menuMenu.add(menuItemCompra);
 
+        menuItemVenda.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_MASK));
         menuItemVenda.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         menuItemVenda.setText("Venda");
         menuItemVenda.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -139,6 +140,7 @@ public class FrameMenu extends javax.swing.JFrame {
         });
         menuMenu.add(menuItemVenda);
 
+        menuItemRelatorio.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
         menuItemRelatorio.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         menuItemRelatorio.setText("Relatório");
         menuItemRelatorio.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -153,6 +155,7 @@ public class FrameMenu extends javax.swing.JFrame {
         });
         menuMenu.add(menuItemRelatorio);
 
+        menuItemSair.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
         menuItemSair.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         menuItemSair.setText("Sair");
         menuItemSair.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -185,20 +188,6 @@ public class FrameMenu extends javax.swing.JFrame {
             }
         });
         menuSobre.add(sobreItemCreditos);
-
-        sobreItemAjuda.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        sobreItemAjuda.setText("Ajuda");
-        sobreItemAjuda.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                sobreItemAjudaMouseClicked(evt);
-            }
-        });
-        sobreItemAjuda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sobreItemAjudaActionPerformed(evt);
-            }
-        });
-        menuSobre.add(sobreItemAjuda);
 
         menuBar.add(menuSobre);
 
@@ -318,14 +307,6 @@ public class FrameMenu extends javax.swing.JFrame {
         
     }//GEN-LAST:event_menuItemSairActionPerformed
 
-    private void sobreItemAjudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sobreItemAjudaActionPerformed
-
-    }//GEN-LAST:event_sobreItemAjudaActionPerformed
-
-    private void sobreItemAjudaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sobreItemAjudaMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_sobreItemAjudaMouseClicked
-
     private void opcaoSair() {                                   
 
         int opcao = JOptionPane.showConfirmDialog(null,"Realmente deseja sair?","Central Control System", JOptionPane.YES_NO_CANCEL_OPTION);
@@ -420,7 +401,6 @@ public class FrameMenu extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuItemVenda;
     private javax.swing.JMenu menuMenu;
     private javax.swing.JMenu menuSobre;
-    private javax.swing.JMenuItem sobreItemAjuda;
     private javax.swing.JMenuItem sobreItemCreditos;
     // End of variables declaration//GEN-END:variables
 }
